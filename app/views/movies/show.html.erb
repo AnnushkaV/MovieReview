@@ -38,15 +38,15 @@
         <p><%= @movie.description %></p>
 
         <% if @reviews.blank? %>
-            <h3>No reviews just yet, would you like to add the first!</h3>
-            <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
         <% else %>
-            <% @reviews.each do |review| %>
-                <div class="reviews">
-                  <div class="star-rating" data-score= <%= review.rating %> ></div>
-                  <p><%= review.comment %></p>
-                </div>
-            <% end %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
